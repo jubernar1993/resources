@@ -1,0 +1,16 @@
+resource "aws_db_instance" "(data_base_name_here)" {
+        allocated_storage    = 10
+        db_name              = "mydb"
+        engine               = "mysql"
+        engine_version       = "5.7"
+        instance_class       = "db.t3.micro"
+        username             = "jubernar"
+        password             = random_password.(resource name here).result
+        parameter_group_name = "default.mysql5.7"
+        skip_final_snapshot  = true
+
+depends_on = [
+        "Random_password resource name HERE"
+]
+
+  }
